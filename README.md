@@ -8,29 +8,16 @@ To develop a python control code to move the mobilerobot along the predefined pa
 2. Python 3.7
 
 ## Procedure
+Step 1: Use from robomaster import robot<br>
+Step 2: Choose the x,y,z - axis movement distance(meters).<br>
+Step 3: Give ep_chasis.move to move straight<br>
+Step 4: Give ep_chasis.drive to get circular motion.<br>
+Step 5: Give ep_chasis.move to move straight<br>
+Step 6: Give ep_chasis.drive to get circular motion.<br>
 
-Step1:
-
-<br/>
-
-Step2:
-
-<br/>
-
-Step3:
-
-<br/>
-
-Step4:
-
-<br/>
-
-Step5:
-
-<br/>
 
 ## Program
-```python
+```
 from robomaster import robot
 import time
 
@@ -40,12 +27,26 @@ if __name__ == '__main__':
 
     ep_chassis = ep_robot.chassis
 
-    ## Write your code here
+    # Movement sequence
+    ep_chassis.move(x=-1, y=0, z=-8, xy_speed=0.75).wait_for_completed()
+    ep_chassis.move(x=0, y=0, z=-135, xy_speed=0.75).wait_for_completed()
+    ep_chassis.move(x=1, y=0.8, z=0, xy_speed=0.75).wait_for_completed()
+    ep_chassis.move(x=0, y=0, z=135, xy_speed=0.75).wait_for_completed()
+    ep_chassis.move(x=1, y=0, z=0, xy_speed=0.75).wait_for_completed()
+    ep_chassis.move(x=0, y=0, z=-90, xy_speed=0.75).wait_for_completed()
+    ep_chassis.move(x=1, y=0, z=0, xy_speed=0.75).wait_for_completed()
+    ep_chassis.move(x=0, y=0, z=-150, xy_speed=0.75).wait_for_completed()
+    ep_chassis.move(x=1, y=0, z=0, xy_speed=0.75).wait_for_completed()
+    ep_chassis.move(x=0, y=0, z=150, xy_speed=0.75).wait_for_completed()
+    ep_chassis.move(x=1, y=0, z=8, xy_speed=0.65).wait_for_completed()
 
+    # Drive with speed control
+    ep_chassis.drive_speed(x=0.2, y=0, z=-20)
+    time.sleep(15)
 
-
-    
+    # Close connection
     ep_robot.close()
+
 ```
 
 ## MobileRobot Movement Image:
@@ -63,8 +64,9 @@ Insert image here
 ## MobileRobot Movement Video:
 
 Upload your video in Youtube and paste your video-id here
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+<br>
+<br>
+file:///C:/Users/admin/Documents/MY%20PERSONAL%20GALLERY/mobile%20robotic.mp4
 
 <br/>
 <br/>
