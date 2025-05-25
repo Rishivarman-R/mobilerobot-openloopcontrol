@@ -76,7 +76,6 @@ file:///C:/Users/admin/Documents/MY%20PERSONAL%20GALLERY/mobile%20robotic.mp4
 ## Result:
 Thus the python program code is developed to move the mobilerobot in the predefined path.
 
-
 <br/>
 <br/>
 
